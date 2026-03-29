@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Next Day</title>
+    <style>
+        body { background: black; color: white; font-family: sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .label { color: #888; font-size: 18px; margin-bottom: 5px; }
+        #day { font-size: 70px; font-weight: bold; margin: 0; text-transform: uppercase; }
+        #date { font-size: 20px; margin-top: 10px; color: #bbb; }
+    </style>
+</head>
+<body>
+    <div class="label">Next Day</div>
+    <div id="day"></div>
+    <div id="date"></div>
+    <script>
+        const days = ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"];
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        let t = new Date();
+        t.setDate(t.getDate() + 1);
+        document.getElementById("day").innerText = days[t.getDay()];
+        document.getElementById("date").innerText = t.getDate() + " " + months[t.getMonth()] + " " + t.getFullYear();
+    </script>
+</body>
+</html>
